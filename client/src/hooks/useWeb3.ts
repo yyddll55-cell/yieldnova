@@ -8,6 +8,7 @@ import {
   getUSDTBalance,
   getYNVBalance,
   onAccountsChanged,
+  
   onChainChanged,
   removeAccountsChangedListener,
   removeChainChangedListener,
@@ -104,7 +105,11 @@ export function useWeb3() {
       }
 
       // Switch to BSC
-      await switchToBSC();
+      try {
+  await switchToBSC();
+} catch (e) {
+  console.warn("switchToBSC skipped", e);
+}
 
       // Connect wallet
       const info = await connectWallet();
