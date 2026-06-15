@@ -1,0 +1,1 @@
+ALTER TABLE `pointTransactions` MODIFY COLUMN `type` enum('deposit','withdrawal','transfer','bonus_direct_referral','bonus_upline_matching','fee','admin_deposit') NOT NULL;
