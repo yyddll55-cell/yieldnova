@@ -109,7 +109,7 @@ export function useWeb3() {
   await switchToBSC();
 } catch (e) {
   console.warn("switchToBSC skipped", e);
-}
+} 
 
       // Connect wallet
       const info = await connectWallet();
@@ -162,3 +162,4 @@ export function useWeb3() {
     isWalletAvailable: isWalletAvailable(),
   };
 }
+commit message
