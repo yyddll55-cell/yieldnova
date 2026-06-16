@@ -162,4 +162,3 @@ export function useWeb3() {
     isWalletAvailable: isWalletAvailable(),
   };
 }
-commit message
