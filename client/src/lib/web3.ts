@@ -181,8 +181,30 @@ export async function getFormattedTokenBalance(
   tokenAddress: string,
   walletAddress: string
 ): Promise<string> {
-  const { balance, decimals } = await getTokenBalance(tokenAddress, walletAddress);
-  return ethers.formatUnits(balance, decimals);
+
+  // 토큰 주소가 없는 경우
+  if (!tokenAddress) {
+    return "0";
+  }
+
+  try {
+    const { balance, decimals } = await getTokenBalance(
+      tokenAddress,
+      walletAddress
+    );
+
+    return ethers.formatUnits(
+      balance,
+      decimals
+    );
+  } catch (error) {
+    console.error(
+      "Token balance error:",
+      error
+    );
+
+    return "0";
+  }
 }
 
 /**
@@ -195,8 +217,28 @@ export async function getUSDTBalance(walletAddress: string): Promise<string> {
 /**
  * Get YNV balance
  */
-export async function getYNVBalance(walletAddress: string): Promise<string> {
-  return getFormattedTokenBalance(YNV_CONTRACT_ADDRESS, walletAddress);
+export async function getYNVBalance(
+  walletAddress: string
+): Promise<string> {
+
+  // 아직 YNV 토큰 미발행 상태
+  if (!YNV_CONTRACT_ADDRESS) {
+    return "토큰 준비중";
+  }
+
+  try {
+    return await getFormattedTokenBalance(
+      YNV_CONTRACT_ADDRESS,
+      walletAddress
+    );
+  } catch (error) {
+    console.error(
+      "YNV balance error:",
+      error
+    );
+
+    return "토큰 준비중";
+  }
 }
 
 /**
