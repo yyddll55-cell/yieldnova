@@ -116,7 +116,7 @@ export default function Admin() {
       if (!hasVisited) {
         setShowQRSetup(true);
         // Generate QR code URL (using otpauth format)
-        const otpauthUrl = `otpauth://totp/YieldNova%20Admin?secret=${otpSecret}&issuer=YieldNova`;
+        const otpauthUrl = `otpauth://totp/Dogeshiba%20Admin?secret=${otpSecret}&issuer=Dogeshiba`;
         // In production, you would generate QR code here using qrcode library
         // For now, show the setup screen with the secret key
         setQrCodeUrl("");
@@ -713,7 +713,7 @@ export default function Admin() {
                 <ShieldCheck className="w-5 h-5 text-white" />
               </div>
               <div>
-                <h1 className="text-lg font-bold text-white">YieldNova 관리자</h1>
+                <h1 className="text-lg font-bold text-white">Dogeshiba 관리자</h1>
                 <p className="text-xs text-muted-foreground">
                   {connectedWallet?.substring(0, 6)}...{connectedWallet?.substring(38)}
                 </p>

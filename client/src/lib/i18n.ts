@@ -28,9 +28,9 @@ export const translations: Record<Language, Record<string, string>> = {
     "wallet.insufficient": "Insufficient balance",
 
     // DSHIB Token
-    "token.dshib": "DSHIB",
-    "token.dshib_balance": "DSHIB Balance",
-    "token.dshib_price": "DSHIB Price",
+    "token.ynv": "DSHIB",
+    "token.ynv_balance": "DSHIB Balance",
+    "token.ynv_price": "DSHIB Price",
     "token.current_price": "Current DSHIB Price",
     "token.usdt": "USDT",
 
@@ -59,7 +59,7 @@ export const translations: Record<Language, Record<string, string>> = {
     "referral.direct_bonus": "Direct Bonus",
     "referral.direct_bonus_percent": "10% Direct Referral Bonus",
     "referral.upline_bonus": "Upline Bonus",
-    "referral.upline_bonus_percent": "8% × 10 Levels Upline Matching",
+    "referral.upline_bonus_percent": "6.5% × 10 Levels Upline Matching",
     "referral.total_bonus": "Total Bonus",
 
     // Organization
@@ -88,7 +88,7 @@ export const translations: Record<Language, Record<string, string>> = {
     "admin.price_setting": "Price Setting",
     "admin.withdrawal_management": "Withdrawal Management",
     "admin.wallet_management": "Wallet Management",
-    "admin.current_dshib_price": "Current DSHIB Price",
+    "admin.current_ynv_price": "Current DSHIB Price",
     "admin.pending_withdrawals": "Pending Withdrawals",
     "admin.approve": "Approve",
     "admin.reject": "Reject",
@@ -138,9 +138,9 @@ export const translations: Record<Language, Record<string, string>> = {
     "wallet.insufficient": "잔액 부족",
 
     // DSHIB Token
-    "token.dshib": "DSHIB",
-    "token.dshib_balance": "DSHIB 잔액",
-    "token.dshib_price": "DSHIB 가격",
+    "token.ynv": "DSHIB",
+    "token.ynv_balance": "DSHIB 잔액",
+    "token.ynv_price": "DSHIB 가격",
     "token.current_price": "현재 DSHIB 가격",
     "token.usdt": "USDT",
 
@@ -169,7 +169,7 @@ export const translations: Record<Language, Record<string, string>> = {
     "referral.direct_bonus": "직추천 보너스",
     "referral.direct_bonus_percent": "10% 직추천 보너스",
     "referral.upline_bonus": "상위 보너스",
-    "referral.upline_bonus_percent": "8% × 10단계 상위 매칭",
+    "referral.upline_bonus_percent": "6.5% × 10단계 상위 매칭",
     "referral.total_bonus": "총 보너스",
 
     // Organization
@@ -198,7 +198,7 @@ export const translations: Record<Language, Record<string, string>> = {
     "admin.price_setting": "가격 설정",
     "admin.withdrawal_management": "출금 관리",
     "admin.wallet_management": "지갑 관리",
-    "admin.current_dshib_price": "현재 DSHIB 가격",
+    "admin.current_ynv_price": "현재 DSHIB 가격",
     "admin.pending_withdrawals": "대기 중인 출금",
     "admin.approve": "승인",
     "admin.reject": "거절",
@@ -248,9 +248,9 @@ export const translations: Record<Language, Record<string, string>> = {
     "wallet.insufficient": "残高不足",
 
     // DSHIB Token
-    "token.dshib": "DSHIB",
-    "token.dshib_balance": "DSHIB残高",
-    "token.dshib_price": "DSHIB価格",
+    "token.ynv": "DSHIB",
+    "token.ynv_balance": "DSHIB残高",
+    "token.ynv_price": "DSHIB価格",
     "token.current_price": "現在のDSHIB価格",
     "token.usdt": "USDT",
 
@@ -279,7 +279,7 @@ export const translations: Record<Language, Record<string, string>> = {
     "referral.direct_bonus": "紹介ボーナス",
     "referral.direct_bonus_percent": "紹介ボーナス 10%",
     "referral.upline_bonus": "上位ボーナス",
-    "referral.upline_bonus_percent": "8% × 10代寄付配分",
+    "referral.upline_bonus_percent": "6.5% × 10代寄付配分",
     "referral.total_bonus": "総ボーナス",
 
     // Organization
@@ -308,7 +308,7 @@ export const translations: Record<Language, Record<string, string>> = {
     "admin.price_setting": "価格設定",
     "admin.withdrawal_management": "出金管理",
     "admin.wallet_management": "ウォレット管理",
-    "admin.current_dshib_price": "現在のDSHIB価格",
+    "admin.current_ynv_price": "現在のDSHIB価格",
     "admin.pending_withdrawals": "保留中の出金",
     "admin.approve": "承認",
     "admin.reject": "却下",
@@ -358,9 +358,9 @@ export const translations: Record<Language, Record<string, string>> = {
     "wallet.insufficient": "余额不足",
 
     // DSHIB Token
-    "token.dshib": "DSHIB",
-    "token.dshib_balance": "DSHIB余额",
-    "token.dshib_price": "DSHIB价格",
+    "token.ynv": "DSHIB",
+    "token.ynv_balance": "DSHIB余额",
+    "token.ynv_price": "DSHIB价格",
     "token.current_price": "当前DSHIB价格",
     "token.usdt": "USDT",
 
@@ -389,7 +389,7 @@ export const translations: Record<Language, Record<string, string>> = {
     "referral.direct_bonus": "推荐奖金",
     "referral.direct_bonus_percent": "推荐奖金 10%",
     "referral.upline_bonus": "上级奖金",
-    "referral.upline_bonus_percent": "8% × 10代捐赠分配",
+    "referral.upline_bonus_percent": "6.5% × 10代捐赠分配",
     "referral.total_bonus": "总奖金",
 
     // Organization
@@ -418,7 +418,7 @@ export const translations: Record<Language, Record<string, string>> = {
     "admin.price_setting": "价格设置",
     "admin.withdrawal_management": "提现管理",
     "admin.wallet_management": "钱包管理",
-    "admin.current_dshib_price": "当前DSHIB价格",
+    "admin.current_ynv_price": "当前DSHIB价格",
     "admin.pending_withdrawals": "待处理提现",
     "admin.approve": "批准",
     "admin.reject": "拒绝",
@@ -468,9 +468,9 @@ export const translations: Record<Language, Record<string, string>> = {
     "wallet.insufficient": "Số dư không đủ",
 
     // DSHIB Token
-    "token.dshib": "DSHIB",
-    "token.dshib_balance": "Số dư DSHIB",
-    "token.dshib_price": "Giá DSHIB",
+    "token.ynv": "DSHIB",
+    "token.ynv_balance": "Số dư DSHIB",
+    "token.ynv_price": "Giá DSHIB",
     "token.current_price": "Giá DSHIB hiện tại",
     "token.usdt": "USDT",
 
@@ -499,7 +499,7 @@ export const translations: Record<Language, Record<string, string>> = {
     "referral.direct_bonus": "Bonus giới thiệu",
     "referral.direct_bonus_percent": "Bonus Giới Thiệu 10%",
     "referral.upline_bonus": "Bonus cấp trên",
-    "referral.upline_bonus_percent": "Phân Phối Quyên Góp 10 Tầng Mỗi Tầng 8%",
+    "referral.upline_bonus_percent": "Phân Phối Quyên Góp 10 Tầng Mỗi Tầng 6.5%",
     "referral.total_bonus": "Tổng bonus",
 
     // Organization
@@ -528,7 +528,7 @@ export const translations: Record<Language, Record<string, string>> = {
     "admin.price_setting": "Cài đặt giá",
     "admin.withdrawal_management": "Quản lý rút tiền",
     "admin.wallet_management": "Quản lý ví",
-    "admin.current_dshib_price": "Giá DSHIB hiện tại",
+    "admin.current_ynv_price": "Giá DSHIB hiện tại",
     "admin.pending_withdrawals": "Rút tiền đang chờ xử lý",
     "admin.approve": "Phê duyệt",
     "admin.reject": "Từ chối",

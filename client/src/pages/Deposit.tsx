@@ -8,7 +8,7 @@ import { ArrowRight, Loader2 } from "lucide-react";
 import { toast } from "sonner";
 
 // YNV 고정 수량 정의
-const LEVEL_YNV_AMOUNTS = {
+const LEVEL_DSHIB_AMOUNTS = {
   1: 30000,
   2: 50000,
   3: 90000,
@@ -40,7 +40,7 @@ export default function Deposit() {
     return Math.floor(amount * 1500).toString();
   };
 
-  // 보너스 YNV를 USDT로 환산
+  // 보너스 DSHIB를 USDT로 환산
   const convertYnvToUsdt = (ynvAmount: number) => {
     if (!priceData) return 0;
     const priceUsd = parseFloat(priceData.priceUSD.toString());
@@ -136,7 +136,7 @@ export default function Deposit() {
                     <ul className="text-xs text-green-200 space-y-0.5 ml-2">
                       {Array.from({ length: 10 }, (_, i) => {
                         const level = 1; // 기본값: 레벨 1
-                        const baseYnv = LEVEL_YNV_AMOUNTS[level as keyof typeof LEVEL_YNV_AMOUNTS];
+                        const baseYnv = LEVEL_DSHIB_AMOUNTS[level as keyof typeof LEVEL_DSHIB_AMOUNTS];
                         const bonusYnv = calculateBonus(baseYnv, 'upline');
                         const bonusUsdt = convertYnvToUsdt(bonusYnv);
                         return (
@@ -152,7 +152,7 @@ export default function Deposit() {
                     <ul className="text-xs text-green-200 space-y-0.5 ml-2">
                       {Array.from({ length: 1 }, (_, i) => {
                         const level = 1; // 기본값: 레벨 1
-                        const baseYnv = LEVEL_YNV_AMOUNTS[level as keyof typeof LEVEL_YNV_AMOUNTS];
+                        const baseYnv = LEVEL_DSHIB_AMOUNTS[level as keyof typeof LEVEL_DSHIB_AMOUNTS];
                         const referralBonus = calculateBonus(baseYnv, 'referral');
                         const uplineBonus = calculateBonus(baseYnv, 'upline');
                         const totalBonus = referralBonus + uplineBonus;
@@ -203,7 +203,7 @@ export default function Deposit() {
           <div>
             {/* Current Price */}
             <Card className="p-6 mb-6">
-              <h3 className="font-semibold mb-4">YNV 가격</h3>
+              <h3 className="font-semibold mb-4">DSHIB 가격</h3>
               <div className="text-3xl font-bold text-blue-400 mb-2">
                 ${priceData?.priceUSD || "로딩 중..."}
               </div>

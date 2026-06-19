@@ -20,7 +20,7 @@ const CustomTooltip = ({ active, payload, label }: any) => {
       <div className="bg-[#0d1117] border border-blue-500/30 rounded-xl p-3 shadow-xl">
         <p className="text-xs text-gray-400 mb-1">{label}</p>
         <p className="text-base font-bold text-blue-400">${parseFloat(payload[0].value).toFixed(4)}</p>
-        <p className="text-xs text-gray-500">YNV / USDT</p>
+        <p className="text-xs text-gray-500">DSHIB / USDT</p>
       </div>
     );
   }
@@ -72,10 +72,10 @@ export default function Marketing() {
   const isPositive = currentPriceVal >= firstPrice;
 
   const FEATURES = [
-    { icon: Zap, title: "고수익 DeFi", desc: "YNV 토큰 기반 스마트 수익 시스템으로 안정적인 수익을 창출하세요.", color: "text-yellow-400", bg: "bg-yellow-500/10 border-yellow-500/20" },
+    { icon: Zap, title: "고수익 DeFi", desc: "DSHIB 토큰 기반 스마트 수익 시스템으로 안정적인 수익을 창출하세요.", color: "text-yellow-400", bg: "bg-yellow-500/10 border-yellow-500/20" },
     { icon: Users, title: "바이너리 조직", desc: "좌우 2진 트리 구조로 팀을 구성하고 추천 보너스를 받으세요.", color: "text-blue-400", bg: "bg-blue-500/10 border-blue-500/20" },
     { icon: Shield, title: "BSC 블록체인", desc: "Binance Smart Chain 기반으로 투명하고 안전한 거래를 보장합니다.", color: "text-green-400", bg: "bg-green-500/10 border-green-500/20" },
-    { icon: DollarSign, title: "USDT 출금", desc: "YNV를 USDT로 환전하여 언제든지 출금할 수 있습니다.", color: "text-purple-400", bg: "bg-purple-500/10 border-purple-500/20" },
+    { icon: DollarSign, title: "USDT 출금", desc: "DSHIB를 USDT로 환전하여 언제든지 출금할 수 있습니다.", color: "text-purple-400", bg: "bg-purple-500/10 border-purple-500/20" },
   ];
 
   const PACKAGES = [
@@ -86,7 +86,7 @@ export default function Marketing() {
   ];
 
   // YNV 환산 계산: USDT × 1,500 = YNV
-  const calculateYNV = (usdtAmount: number) => {
+  const calculateDSHIB = (usdtAmount: number) => {
     return (usdtAmount * 1500).toLocaleString();
   };
 
@@ -106,7 +106,7 @@ export default function Marketing() {
             <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-blue-500 to-purple-600 flex items-center justify-center">
               <Zap className="w-4 h-4 text-white" />
             </div>
-            <span className="font-bold text-lg">YieldNova</span>
+            <span className="font-bold text-lg">Dogeshiba</span>
           </div>
           <div className="hidden md:flex items-center gap-6 text-sm text-gray-400">
             <a href="#features" className="hover:text-white transition-colors">특징</a>
@@ -146,19 +146,19 @@ export default function Marketing() {
         <div className="max-w-6xl mx-auto text-center relative">
           <div className="inline-flex items-center gap-2 bg-blue-500/10 border border-blue-500/20 rounded-full px-4 py-2 text-sm text-blue-400 mb-8">
             <div className="w-2 h-2 rounded-full bg-green-400 animate-pulse" />
-            현재 YNV 가격: ${currentPriceVal.toFixed(9)} USDT
+            현재 DSHIB 가격: ${currentPriceVal.toFixed(9)} USDT
           </div>
 
           <h1 className="text-5xl md:text-7xl font-black mb-6 leading-tight">
             <span className="bg-gradient-to-r from-blue-400 via-purple-400 to-cyan-400 bg-clip-text text-transparent">
-              YieldNova
+              Dogeshiba
             </span>
             <br />
             <span className="text-white">DeFi 플랫폼</span>
           </h1>
 
           <p className="text-xl text-gray-400 mb-10 max-w-2xl mx-auto leading-relaxed">
-            BSC 블록체인 기반 YNV 토큰으로 스마트한 수익을 창출하세요.
+            BSC 블록체인 기반 DSHIB 토큰으로 스마트한 수익을 창출하세요.
             바이너리 조직 구조와 USDT 출금 시스템을 갖춘 차세대 DeFi 플랫폼입니다.
           </p>
 
@@ -191,7 +191,7 @@ export default function Marketing() {
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold mb-4">
-              왜 <span className="text-blue-400">YieldNova</span>인가?
+              왜 <span className="text-blue-400">Dogeshiba</span>인가?
             </h2>
             <p className="text-gray-400">차세대 DeFi 플랫폼의 핵심 기능</p>
           </div>
@@ -234,8 +234,8 @@ export default function Marketing() {
                   <p className="text-3xl font-black text-white mb-1">${pkg.price.toFixed(2)}</p>
                   <p className="text-sm text-gray-400 mb-4">USDT 투자</p>
                   <div className="bg-white/5 rounded-lg p-3 mb-4">
-                    <p className="text-xs text-gray-500 mb-1">받는 YNV</p>
-                    <p className="font-bold text-blue-400">{calculateYNV(pkg.price)} YNV</p>
+                    <p className="text-xs text-gray-500 mb-1">받는 DSHIB</p>
+                    <p className="font-bold text-blue-400">{calculateDSHIB(pkg.price)} YNV</p>
                   </div>
                   <Button
               onClick={goToApp}
@@ -261,7 +261,7 @@ export default function Marketing() {
             </h2>
             <p className="text-gray-400 mb-8 text-lg">
               MetaMask 또는 TokenPocket 지갑으로 BSC 네트워크에 연결하고<br />
-              YieldNova DeFi 플랫폼을 경험하세요.
+              Dogeshiba DeFi 플랫폼을 경험하세요.
             </p>
             <Button
               onClick={goToApp}
@@ -281,9 +281,9 @@ export default function Marketing() {
             <div className="w-6 h-6 rounded bg-gradient-to-br from-blue-500 to-purple-600 flex items-center justify-center">
               <Zap className="w-3 h-3 text-white" />
             </div>
-            <span className="text-sm font-semibold text-gray-400">YieldNova DeFi</span>
+            <span className="text-sm font-semibold text-gray-400">Dogeshiba DeFi</span>
           </div>
-          <p className="text-xs text-gray-600">© 2026 YieldNova. All rights reserved. BSC Network.</p>
+          <p className="text-xs text-gray-600">© 2026 Dogeshiba. All rights reserved. BSC Network.</p>
         </div>
       </footer>
 
@@ -298,7 +298,7 @@ export default function Marketing() {
               ${currentPriceVal.toFixed(9)}
             </div>
             <p className="text-gray-400 text-lg">USDT</p>
-            <p className="text-gray-500 text-sm mt-4">YieldNova DeFi 플랫폼</p>
+            <p className="text-gray-500 text-sm mt-4">Dogeshiba DeFi 플랫폼</p>
           </div>
         </DialogContent>
       </Dialog>

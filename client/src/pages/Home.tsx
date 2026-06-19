@@ -120,7 +120,7 @@ export default function Home() {
               <TrendingUp className="w-8 h-8 text-white" />
             </div>
             <CardTitle className="text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-500">
-              YieldNova DeFi
+              Dogeshiba DeFi
             </CardTitle>
             <CardDescription className="text-slate-400 mt-2">{t("dashboard.title", language)}</CardDescription>
           </CardHeader>
@@ -161,7 +161,7 @@ export default function Home() {
           <div className="flex justify-between items-center">
             <div>
               <div className="flex items-center gap-3">
-                <h1 className="text-3xl font-bold gradient-text">YieldNova DeFi</h1>
+                <h1 className="text-3xl font-bold gradient-text">Dogeshiba DeFi</h1>
                 <div className="flex gap-2">
                   <button
                     onClick={() => setLanguage("ko")}
