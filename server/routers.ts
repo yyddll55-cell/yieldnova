@@ -231,6 +231,14 @@ export const appRouter = router({
     getBalance: publicProcedure.query(async ({ ctx }) => {
       const walletAddress = getWalletAddressFromContext(ctx);
       const user = await getOrCreateUserByWallet(walletAddress);
+      // 새 백엔드(Dogeshiba)에서 DSHIB 잔액 조회 시도
+      try {
+        const res = await fetch(`http://34.148.84.182:3000/api/dashboard/${user.id}`);
+        if (res.ok) {
+          const data = await res.json();
+          return { balance: String(data.withdrawable_balance || user.pointBalance) };
+        }
+      } catch {}
       return { balance: user.pointBalance };
     }),
 
