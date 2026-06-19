@@ -32,7 +32,7 @@ export default function Home() {
     onError: () => setReferrerRegistered(true),
   });
 
-  // YNV 시세
+  // DSHIB 시세
   const { data: priceData } = trpc.pointPrice.getCurrentPrice.useQuery();
 
   // 사용자 프로필 조회 (지갑 연결 후)
@@ -47,7 +47,7 @@ export default function Home() {
     { enabled: !!web3.wallet }
   );
 
-  // YNV 거래 내역
+  // DSHIB 거래 내역
   const { data: transactions } = trpc.points.getTransactionHistory.useQuery(
     { limit: 5 },
     { enabled: !!web3.wallet }
@@ -316,14 +316,14 @@ export default function Home() {
                   </div>
                 </Card>
 
-                {/* YNV Balance */}
+                {/* DSHIB Balance */}
                 <Card className="p-6">
-                  <h3 className="text-lg font-semibold mb-4">YNV {t("token.ynv_balance", language)}</h3>
+                  <h3 className="text-lg font-semibold mb-4">DSHIB {t("token.ynv_balance", language)}</h3>
                   <div className="space-y-2">
                     <p className="text-3xl font-bold text-purple-400">
                       {dbBalance.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 })}
                     </p>
-                    <p className="text-sm text-muted-foreground">YieldNova Token</p>
+                    <p className="text-sm text-muted-foreground">Dogeshiba Token</p>
                   </div>
                 </Card>
               </div>
@@ -385,13 +385,13 @@ export default function Home() {
                     <input
                       type="text"
                       readOnly
-                      value={`https://yieldnova-erafeayb.manus.space?ref=${web3.wallet.address}`}
+                      value={`https://yieldnova-k5ft.vercel.app?ref=${web3.wallet.address}`}
                       className="flex-1 px-3 py-2 bg-slate-700 border border-slate-600 rounded text-sm font-mono text-slate-300"
                     />
                     <Button
                       onClick={() => {
                         if (web3.wallet) {
-                          navigator.clipboard.writeText(`https://yieldnova-erafeayb.manus.space?ref=${web3.wallet.address}`);
+                          navigator.clipboard.writeText(`https://yieldnova-k5ft.vercel.app?ref=${web3.wallet.address}`);
                           alert("링크가 복사되었습니다!");
                         }
                       }}

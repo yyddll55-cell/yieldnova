@@ -11,7 +11,7 @@ const PACKAGES = [
     level: 1,
     priceUSDT: 20,
     points: 30000,
-    description: "상위 1대~10대 각 8% 기부 배분 (대수별 2,400 YNV) | 추천 보너스 10% (3,000 YNV)",
+    description: "상위 1대~10대 각 8% 기부 배분 (대수별 2,400 DSHIB) | 추천 보너스 10% (3,000 DSHIB)",
     color: "from-blue-500 to-blue-600",
     badge: "level-badge-1",
   },
@@ -19,7 +19,7 @@ const PACKAGES = [
     level: 2,
     priceUSDT: 33.33,
     points: 50000,
-    description: "상위 1대~10대 각 8% 기부 배분 (대수별 4,000 YNV) | 추천 보너스 10% (5,000 YNV)",
+    description: "상위 1대~10대 각 8% 기부 배분 (대수별 4,000 DSHIB) | 추천 보너스 10% (5,000 DSHIB)",
     color: "from-purple-500 to-purple-600",
     badge: "level-badge-2",
   },
@@ -27,7 +27,7 @@ const PACKAGES = [
     level: 3,
     priceUSDT: 60,
     points: 90000,
-    description: "상위 1대~10대 각 8% 기부 배분 (대수별 7,200 YNV) | 추천 보너스 10% (9,000 YNV)",
+    description: "상위 1대~10대 각 8% 기부 배분 (대수별 7,200 DSHIB) | 추천 보너스 10% (9,000 DSHIB)",
     color: "from-pink-500 to-pink-600",
     badge: "level-badge-3",
   },
@@ -35,14 +35,14 @@ const PACKAGES = [
     level: 4,
     priceUSDT: 93.33,
     points: 140000,
-    description: "상위 1대~10대 각 8% 기부 배분 (대수별 11,200 YNV) | 추천 보너스 10% (14,000 YNV)",
+    description: "상위 1대~10대 각 8% 기부 배분 (대수별 11,200 DSHIB) | 추천 보너스 10% (14,000 DSHIB)",
     color: "from-orange-500 to-orange-600",
     badge: "level-badge-4",
   },
 ];
 
-// 레벨별 필요 YNV 잔액
-const LEVEL_YNV_PRICES: Record<number, number> = {
+// 레벨별 필요 DSHIB 잔액
+const LEVEL_DSHIB_PRICES: Record<number, number> = {
   1: 30000,
   2: 50000,
   3: 90000,
@@ -127,10 +127,10 @@ export default function Package() {
   /**
    * 이중 검증 함수
    * [조건 1] 순서: 구매하려는 레벨의 이전 레벨이 현재 사이클에서 완료되어야 함
-   * [조건 2] 잔액: pointBalance >= 해당 레벨 필요 YNV
+   * [조건 2] 잔액: pointBalance >= 해당 레벨 필요 DSHIB
    */
   const getLevelStatus = (levelNum: number) => {
-    const requiredBalance = LEVEL_YNV_PRICES[levelNum];
+    const requiredBalance = LEVEL_DSHIB_PRICES[levelNum];
     const hasEnoughBalance = dbBalance >= requiredBalance;
 
     // 순서 검증: 레벨 N을 구매하려면 cycleLevel이 N-1이어야 함
@@ -151,7 +151,7 @@ export default function Package() {
         lockReason = `레벨 ${levelNum - 1} 구매 필요`;
       }
     } else if (!hasEnoughBalance) {
-      lockReason = `잔액 부족 (필요: ${requiredBalance.toLocaleString()} YNV)`;
+      lockReason = `잔액 부족 (필요: ${requiredBalance.toLocaleString()} DSHIB)`;
     }
 
     return { canPurchase, isCorrectOrder, hasEnoughBalance, lockReason };
@@ -192,7 +192,7 @@ export default function Package() {
                 </p>
               </div>
               <div className="text-right">
-                <p className="text-sm text-foreground/60 mb-1">YNV 잔액</p>
+                <p className="text-sm text-foreground/60 mb-1">DSHIB 잔액</p>
                 <p className="text-2xl font-bold text-foreground">
                   {dbBalance.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 })}
                 </p>
@@ -246,9 +246,9 @@ export default function Package() {
                     <p className="text-xs text-foreground/50">USDT</p>
                   </div>
 
-                  {/* YNV 필요 잔액 */}
+                  {/* DSHIB 필요 잔액 */}
                   <div className="mb-4">
-                    <p className="text-sm text-foreground/60 mb-1">필요 YNV 잔액</p>
+                    <p className="text-sm text-foreground/60 mb-1">필요 DSHIB 잔액</p>
                     <p className={`text-xl font-bold ${hasEnoughBalance ? "text-green-500" : "text-red-400"}`}>
                       {pkg.points.toLocaleString()}
                     </p>
@@ -338,7 +338,7 @@ export default function Package() {
                   </div>
                   <div>
                     <p className="font-semibold text-foreground mb-1">
-                      {pkg.points.toLocaleString()} YNV
+                      {pkg.points.toLocaleString()} DSHIB
                     </p>
                     <p className="text-sm text-foreground/60">
                       {pkg.description}

@@ -94,7 +94,7 @@ export default function Dashboard() {
 
       
       <div style={{ border: '1px solid #1e293b', borderRadius: '10px', padding: '20px', marginBottom: '20px', backgroundColor: '#0f172a' }}>
-        <p style={{ color: '#94a3b8' }}>일드노바 (YNV)</p>
+        <p style={{ color: '#94a3b8' }}>일드노바 (DSHIB)</p>
         <h1 style={{ color: '#00bfff', margin: '10px 0' }}>0</h1>
         <p style={{ color: '#64748b' }}>≈ ₩0</p>
       </div>

@@ -15,7 +15,7 @@ export const translations: Record<Language, Record<string, string>> = {
 
     // Dashboard
     "dashboard.title": "YieldNova DeFi Platform",
-    "dashboard.subtitle": "Smart yield creation with BSC-based YNV tokens. Organize your network and USDT deposit system with a DeFi platform.",
+    "dashboard.subtitle": "Smart yield creation with BSC-based DSHIB tokens. Organize your network and USDT deposit system with a DeFi platform.",
     "dashboard.start_deposit": "Start Deposit",
     "dashboard.explore_market": "Explore Market",
 
@@ -27,11 +27,11 @@ export const translations: Record<Language, Record<string, string>> = {
     "wallet.balance": "Balance",
     "wallet.insufficient": "Insufficient balance",
 
-    // YNV Token
-    "token.ynv": "YNV",
-    "token.ynv_balance": "YNV Balance",
-    "token.ynv_price": "YNV Price",
-    "token.current_price": "Current YNV Price",
+    // DSHIB Token
+    "token.dshib": "DSHIB",
+    "token.dshib_balance": "DSHIB Balance",
+    "token.dshib_price": "DSHIB Price",
+    "token.current_price": "Current DSHIB Price",
     "token.usdt": "USDT",
 
     // Deposit & Level
@@ -88,7 +88,7 @@ export const translations: Record<Language, Record<string, string>> = {
     "admin.price_setting": "Price Setting",
     "admin.withdrawal_management": "Withdrawal Management",
     "admin.wallet_management": "Wallet Management",
-    "admin.current_ynv_price": "Current YNV Price",
+    "admin.current_dshib_price": "Current DSHIB Price",
     "admin.pending_withdrawals": "Pending Withdrawals",
     "admin.approve": "Approve",
     "admin.reject": "Reject",
@@ -125,7 +125,7 @@ export const translations: Record<Language, Record<string, string>> = {
 
     // Dashboard
     "dashboard.title": "YieldNova DeFi 플랫폼",
-    "dashboard.subtitle": "BSC 블록체인 기반 YNV 토큰으로 스마트한 수익을 창출하세요. 바이너리 조직 구조와 USDT 출금 시스템을 갖춘 자체대 DeFi 플랫폼입니다.",
+    "dashboard.subtitle": "BSC 블록체인 기반 DSHIB 토큰으로 스마트한 수익을 창출하세요. 바이너리 조직 구조와 USDT 출금 시스템을 갖춘 자체대 DeFi 플랫폼입니다.",
     "dashboard.start_deposit": "지금 시작하기",
     "dashboard.explore_market": "시세 확인하기",
 
@@ -137,11 +137,11 @@ export const translations: Record<Language, Record<string, string>> = {
     "wallet.balance": "잔액",
     "wallet.insufficient": "잔액 부족",
 
-    // YNV Token
-    "token.ynv": "YNV",
-    "token.ynv_balance": "YNV 잔액",
-    "token.ynv_price": "YNV 가격",
-    "token.current_price": "현재 YNV 가격",
+    // DSHIB Token
+    "token.dshib": "DSHIB",
+    "token.dshib_balance": "DSHIB 잔액",
+    "token.dshib_price": "DSHIB 가격",
+    "token.current_price": "현재 DSHIB 가격",
     "token.usdt": "USDT",
 
     // Deposit & Level
@@ -198,7 +198,7 @@ export const translations: Record<Language, Record<string, string>> = {
     "admin.price_setting": "가격 설정",
     "admin.withdrawal_management": "출금 관리",
     "admin.wallet_management": "지갑 관리",
-    "admin.current_ynv_price": "현재 YNV 가격",
+    "admin.current_dshib_price": "현재 DSHIB 가격",
     "admin.pending_withdrawals": "대기 중인 출금",
     "admin.approve": "승인",
     "admin.reject": "거절",
@@ -235,7 +235,7 @@ export const translations: Record<Language, Record<string, string>> = {
 
     // Dashboard
     "dashboard.title": "イールドノバ デファイ",
-    "dashboard.subtitle": "Web3ベースのYNVプラットフォーム。BSCブロックチェーン上のYNVトークンでスマートな収益を生み出します。バイナリ組織構造とUSDT出金システムを備えたDeFiプラットフォームです。",
+    "dashboard.subtitle": "Web3ベースのDSHIBプラットフォーム。BSCブロックチェーン上のDSHIBトークンでスマートな収益を生み出します。バイナリ組織構造とUSDT出金システムを備えたDeFiプラットフォームです。",
     "dashboard.start_deposit": "今すぐ開始",
     "dashboard.explore_market": "相場確認",
 
@@ -247,11 +247,11 @@ export const translations: Record<Language, Record<string, string>> = {
     "wallet.balance": "残高",
     "wallet.insufficient": "残高不足",
 
-    // YNV Token
-    "token.ynv": "YNV",
-    "token.ynv_balance": "YNV残高",
-    "token.ynv_price": "YNV価格",
-    "token.current_price": "現在のYNV価格",
+    // DSHIB Token
+    "token.dshib": "DSHIB",
+    "token.dshib_balance": "DSHIB残高",
+    "token.dshib_price": "DSHIB価格",
+    "token.current_price": "現在のDSHIB価格",
     "token.usdt": "USDT",
 
     // Deposit & Level
@@ -308,7 +308,7 @@ export const translations: Record<Language, Record<string, string>> = {
     "admin.price_setting": "価格設定",
     "admin.withdrawal_management": "出金管理",
     "admin.wallet_management": "ウォレット管理",
-    "admin.current_ynv_price": "現在のYNV価格",
+    "admin.current_dshib_price": "現在のDSHIB価格",
     "admin.pending_withdrawals": "保留中の出金",
     "admin.approve": "承認",
     "admin.reject": "却下",
@@ -345,7 +345,7 @@ export const translations: Record<Language, Record<string, string>> = {
 
     // Dashboard
     "dashboard.title": "YieldNova 去中心化金融",
-    "dashboard.subtitle": "基于Web3的YNV平台。使用BSC区块链上的YNV代币创造智能收益。具有二进制组织结构和USDT提现系统的DeFi平台。",
+    "dashboard.subtitle": "基于Web3的DSHIB平台。使用BSC区块链上的DSHIB代币创造智能收益。具有二进制组织结构和USDT提现系统的DeFi平台。",
     "dashboard.start_deposit": "立即开始",
     "dashboard.explore_market": "查看行情",
 
@@ -357,11 +357,11 @@ export const translations: Record<Language, Record<string, string>> = {
     "wallet.balance": "余额",
     "wallet.insufficient": "余额不足",
 
-    // YNV Token
-    "token.ynv": "YNV",
-    "token.ynv_balance": "YNV余额",
-    "token.ynv_price": "YNV价格",
-    "token.current_price": "当前YNV价格",
+    // DSHIB Token
+    "token.dshib": "DSHIB",
+    "token.dshib_balance": "DSHIB余额",
+    "token.dshib_price": "DSHIB价格",
+    "token.current_price": "当前DSHIB价格",
     "token.usdt": "USDT",
 
     // Deposit & Level
@@ -418,7 +418,7 @@ export const translations: Record<Language, Record<string, string>> = {
     "admin.price_setting": "价格设置",
     "admin.withdrawal_management": "提现管理",
     "admin.wallet_management": "钱包管理",
-    "admin.current_ynv_price": "当前YNV价格",
+    "admin.current_dshib_price": "当前DSHIB价格",
     "admin.pending_withdrawals": "待处理提现",
     "admin.approve": "批准",
     "admin.reject": "拒绝",
@@ -455,7 +455,7 @@ export const translations: Record<Language, Record<string, string>> = {
 
     // Dashboard
     "dashboard.title": "YieldNova DeFi",
-    "dashboard.subtitle": "Nền tảng YNV dựa trên Web3. Tạo lợi suất thông minh với token YNV trên blockchain BSC. Nền tảng DeFi có cấu trúc tổ chức nhị phân và hệ thống rút tiền USDT.",
+    "dashboard.subtitle": "Nền tảng DSHIB dựa trên Web3. Tạo lợi suất thông minh với token DSHIB trên blockchain BSC. Nền tảng DeFi có cấu trúc tổ chức nhị phân và hệ thống rút tiền USDT.",
     "dashboard.start_deposit": "Bắt đầu ngay",
     "dashboard.explore_market": "Xem giá",
 
@@ -467,11 +467,11 @@ export const translations: Record<Language, Record<string, string>> = {
     "wallet.balance": "Số dư",
     "wallet.insufficient": "Số dư không đủ",
 
-    // YNV Token
-    "token.ynv": "YNV",
-    "token.ynv_balance": "Số dư YNV",
-    "token.ynv_price": "Giá YNV",
-    "token.current_price": "Giá YNV hiện tại",
+    // DSHIB Token
+    "token.dshib": "DSHIB",
+    "token.dshib_balance": "Số dư DSHIB",
+    "token.dshib_price": "Giá DSHIB",
+    "token.current_price": "Giá DSHIB hiện tại",
     "token.usdt": "USDT",
 
     // Deposit & Level
@@ -528,7 +528,7 @@ export const translations: Record<Language, Record<string, string>> = {
     "admin.price_setting": "Cài đặt giá",
     "admin.withdrawal_management": "Quản lý rút tiền",
     "admin.wallet_management": "Quản lý ví",
-    "admin.current_ynv_price": "Giá YNV hiện tại",
+    "admin.current_dshib_price": "Giá DSHIB hiện tại",
     "admin.pending_withdrawals": "Rút tiền đang chờ xử lý",
     "admin.approve": "Phê duyệt",
     "admin.reject": "Từ chối",

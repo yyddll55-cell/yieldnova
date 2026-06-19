@@ -34,7 +34,7 @@ export default function P2PTransfer() {
 
   const transferMutation = trpc.p2p.transfer.useMutation({
     onSuccess: (data) => {
-      toast.success(`${data.recipientName}님에게 ${parseFloat(data.amount).toLocaleString()} YNV 전송 완료`);
+      toast.success(`${data.recipientName}님에게 ${parseFloat(data.amount).toLocaleString()} DSHIB 전송 완료`);
       setRecipientId("");
       setAmount("");
       refetchBalance();
@@ -57,12 +57,12 @@ export default function P2PTransfer() {
       return;
     }
     if (transferAmount < minLimit) {
-      toast.error(`최소 전송액은 ${minLimit.toLocaleString()} YNV입니다`);
+      toast.error(`최소 전송액은 ${minLimit.toLocaleString()} DSHIB입니다`);
       return;
     }
     // Sender-Pays 방식: 본금 + 수수료 합계 검증
     if (totalDeduction > balance) {
-      toast.error(`잔액이 부족합니다 (수수료 포함). 필요: ${totalDeduction.toLocaleString()} YNV, 보유: ${balance.toLocaleString()} YNV`);
+      toast.error(`잔액이 부족합니다 (수수료 포함). 필요: ${totalDeduction.toLocaleString()} DSHIB, 보유: ${balance.toLocaleString()} DSHIB`);
       return;
     }
     setIsLoading(true);
@@ -84,8 +84,8 @@ export default function P2PTransfer() {
           <Button variant="ghost" size="sm" onClick={() => navigate("/app")} className="text-slate-400 hover:text-white mb-4">
             <ArrowLeft className="w-4 h-4 mr-1" /> 돌아가기
           </Button>
-          <h1 className="text-2xl font-bold text-white">P2P YNV 전송</h1>
-          <p className="text-slate-400 text-sm mt-1">다른 회원에게 YNV를 내부 전송합니다</p>
+          <h1 className="text-2xl font-bold text-white">P2P DSHIB 전송</h1>
+          <p className="text-slate-400 text-sm mt-1">다른 회원에게 DSHIB를 내부 전송합니다</p>
         </div>
       </div>
 
@@ -93,7 +93,7 @@ export default function P2PTransfer() {
         <Card className="bg-slate-800 border-slate-700 p-6">
           {/* 잔액 */}
           <div className="bg-blue-500/10 border border-blue-500/30 rounded-lg p-4 mb-6">
-            <p className="text-blue-300 text-sm">내 YNV 잔액: <span className="font-bold text-lg">{userBalance.toLocaleString()}</span></p>
+            <p className="text-blue-300 text-sm">내 DSHIB 잔액: <span className="font-bold text-lg">{userBalance.toLocaleString()}</span></p>
           </div>
 
           {/* 받는 사람 */}
@@ -110,7 +110,7 @@ export default function P2PTransfer() {
 
           {/* 보낼 수량 */}
           <div className="mb-6">
-            <label className="block text-sm font-medium text-slate-300 mb-2">보낼 YNV 수량</label>
+            <label className="block text-sm font-medium text-slate-300 mb-2">보낼 DSHIB 수량</label>
             <Input
               type="number"
               placeholder="0"
@@ -126,12 +126,12 @@ export default function P2PTransfer() {
             <div className="bg-slate-700/50 border border-slate-600 rounded-lg p-4 mb-6 space-y-2">
               <div className="flex justify-between items-center">
                 <span className="text-sm text-slate-300">수수료</span>
-                <span className="text-sm font-medium text-yellow-400">{feeAmount.toLocaleString(undefined, { maximumFractionDigits: 2 })} YNV ({p2pFeePercent}%)</span>
+                <span className="text-sm font-medium text-yellow-400">{feeAmount.toLocaleString(undefined, { maximumFractionDigits: 2 })} DSHIB ({p2pFeePercent}%)</span>
               </div>
               <div className="border-t border-slate-600 pt-2 flex justify-between items-center">
                 <span className="text-sm font-medium text-slate-200">총 차감 수량</span>
                 <span className={`text-sm font-bold ${hasInsufficientBalance ? 'text-red-400' : 'text-cyan-400'}`}>
-                  {totalDeduction.toLocaleString(undefined, { maximumFractionDigits: 2 })} YNV
+                  {totalDeduction.toLocaleString(undefined, { maximumFractionDigits: 2 })} DSHIB
                 </span>
               </div>
             </div>
@@ -162,7 +162,7 @@ export default function P2PTransfer() {
               {myTransfers.map((tx: any) => (
                 <div key={tx.id} className="flex justify-between items-center border-b border-slate-700 pb-2">
                   <span className="text-sm text-slate-400">→ #{tx.toUserId}</span>
-                  <span className="text-sm font-medium text-red-400">-{parseFloat(tx.amount).toLocaleString()} YNV</span>
+                  <span className="text-sm font-medium text-red-400">-{parseFloat(tx.amount).toLocaleString()} DSHIB</span>
                   <span className="text-xs text-slate-500">{new Date(tx.createdAt).toLocaleDateString("ko-KR")}</span>
                 </div>
               ))}

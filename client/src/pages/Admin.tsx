@@ -179,7 +179,7 @@ export default function Admin() {
   // Mutations
   const updatePriceMutation = trpc.pointPrice.setPrice.useMutation({
     onSuccess: () => {
-      toast.success("✅ YNV 가격이 업데이트되었습니다. 마케팅 페이지에도 즉시 반영됩니다.");
+      toast.success("✅ DSHIB 가격이 업데이트되었습니다. 마케팅 페이지에도 즉시 반영됩니다.");
       setNewPrice("");
       refetchPrice();
       refetchHistory();
@@ -769,7 +769,7 @@ export default function Admin() {
               <Card className="bg-slate-800 border-slate-700 p-6">
                 <div className="flex items-start justify-between">
                   <div>
-                    <p className="text-slate-400 text-sm">현재 YNV 가격</p>
+                    <p className="text-slate-400 text-sm">현재 DSHIB 가격</p>
                     <h3 className="text-3xl font-bold text-white mt-2">${currentPriceVal.toFixed(9)}</h3>
                   </div>
                   <TrendingUp className="w-8 h-8 text-green-400" />
@@ -788,7 +788,7 @@ export default function Admin() {
             </div>
 
             <Card className="bg-slate-800 border-slate-700 p-6">
-              <h3 className="text-lg font-bold text-white mb-4">30일 YNV 가격 추이</h3>
+              <h3 className="text-lg font-bold text-white mb-4">30일 DSHIB 가격 추이</h3>
               {chartData.length > 0 ? (
                 <ResponsiveContainer width="100%" height={300}>
                   <AreaChart data={chartData}>
@@ -830,7 +830,7 @@ export default function Admin() {
         {/* Price Tab */}
         {activeTab === "price" && (
           <Card className="bg-slate-800 border-slate-700 p-6">
-            <h3 className="text-lg font-bold text-white mb-6">YNV 가격 설정</h3>
+            <h3 className="text-lg font-bold text-white mb-6">DSHIB 가격 설정</h3>
             <div className="space-y-4">
 
               {/* 가격 자동 상승 토글 */}
@@ -887,7 +887,7 @@ export default function Admin() {
               {/* 수동 가격 입력 (자동 OFF 시만 활성화) */}
               <div className={isAutoPrice ? "opacity-40 pointer-events-none" : ""}>
                 <label className="block text-sm font-medium text-slate-300 mb-2">
-                  수동 YNV 가격 입력 (USD)
+                  수동 DSHIB 가격 입력 (USD)
                 </label>
                 <Input
                   type="number"
@@ -934,7 +934,7 @@ export default function Admin() {
                     <div>
                       <p className="text-sm text-slate-400">사용자 ID: {request.userId}</p>
                       <p className="text-white font-semibold mt-1">
-                        {request.pointAmount} YNV
+                        {request.pointAmount} DSHIB
                       </p>
                       <p className="text-xs text-slate-500 mt-1">
                         상태: <span className="text-yellow-400">{request.status}</span>
@@ -996,7 +996,7 @@ export default function Admin() {
                     </div>
                     <div className="space-y-2 text-sm">
                       <p className="text-slate-400">
-                        <span className="text-slate-300 font-medium">받는 YNV:</span> {[30000, 50000, 90000, 140000][level - 1].toLocaleString()}
+                        <span className="text-slate-300 font-medium">받는 DSHIB:</span> {[30000, 50000, 90000, 140000][level - 1].toLocaleString()}
                       </p>
                       <p className="text-slate-400">
                         <span className="text-slate-300 font-medium">진입 조건:</span> 레벨 {level - 1 > 0 ? level - 1 : '없음'} 완료 필수
@@ -1025,11 +1025,11 @@ export default function Admin() {
         {activeTab === "withdrawalSettings" && (
           <div className="space-y-6">
             <Card className="bg-slate-800 border-slate-700 p-6">
-              <h3 className="text-lg font-bold text-white mb-6">YNV 출금 제한 설정</h3>
+              <h3 className="text-lg font-bold text-white mb-6">DSHIB 출금 제한 설정</h3>
               <div className="space-y-4">
                 <div>
                   <label className="block text-sm font-medium text-slate-300 mb-2">
-                    최소 출금 수량 (YNV)
+                    최소 출금 수량 (DSHIB)
                   </label>
                   <Input
                     type="number"
@@ -1042,7 +1042,7 @@ export default function Admin() {
                 </div>
                 <div>
                   <label className="block text-sm font-medium text-slate-300 mb-2">
-                    최대 출금 수량 (YNV)
+                    최대 출금 수량 (DSHIB)
                   </label>
                   <Input
                     type="number"
@@ -1091,11 +1091,11 @@ export default function Admin() {
               <div className="grid grid-cols-3 gap-4">
                 <div className="bg-slate-700 p-4 rounded-lg text-center">
                   <p className="text-xs text-slate-400">최소</p>
-                  <p className="text-lg font-bold text-white">{parseFloat(withdrawalSettingsData?.minLimit?.toString() || "1000").toLocaleString()} YNV</p>
+                  <p className="text-lg font-bold text-white">{parseFloat(withdrawalSettingsData?.minLimit?.toString() || "1000").toLocaleString()} DSHIB</p>
                 </div>
                 <div className="bg-slate-700 p-4 rounded-lg text-center">
                   <p className="text-xs text-slate-400">최대</p>
-                  <p className="text-lg font-bold text-white">{parseFloat(withdrawalSettingsData?.maxLimit?.toString() || "100000").toLocaleString()} YNV</p>
+                  <p className="text-lg font-bold text-white">{parseFloat(withdrawalSettingsData?.maxLimit?.toString() || "100000").toLocaleString()} DSHIB</p>
                 </div>
                 <div className="bg-slate-700 p-4 rounded-lg text-center">
                   <p className="text-xs text-slate-400">상태</p>
@@ -1183,7 +1183,7 @@ export default function Admin() {
                           <span className="text-green-400">#{transfer.toUserId}</span>
                         </p>
                         <p className="text-white font-semibold mt-1">
-                          {parseFloat(transfer.amount).toLocaleString()} YNV
+                          {parseFloat(transfer.amount).toLocaleString()} DSHIB
                         </p>
                       </div>
                       <div className="text-right">
@@ -1223,7 +1223,7 @@ export default function Admin() {
                   <label className="block text-sm font-medium text-slate-300 mb-1">
                     180일 스테이킹 일일 이자율 (%)
                   </label>
-                  <p className="text-xs text-slate-500 mb-2">180일 기간으로 스테이킹한 YNV에 대한 매일 자동 적립되는 이자율</p>
+                  <p className="text-xs text-slate-500 mb-2">180일 기간으로 스테이킹한 DSHIB에 대한 매일 자동 적립되는 이자율</p>
                   <div className="flex gap-2 items-center">
                     <Input
                       type="number"
@@ -1236,7 +1236,7 @@ export default function Admin() {
                       placeholder="1.0"
                     />
                     <span className="text-slate-400 text-sm">% / 일</span>
-                    <span className="text-xs text-slate-500">예: 1.0% → 10,000 YNV 스테이킹 시 100 YNV/일</span>
+                    <span className="text-xs text-slate-500">예: 1.0% → 10,000 DSHIB 스테이킹 시 100 DSHIB/일</span>
                   </div>
                 </div>
 
@@ -1245,7 +1245,7 @@ export default function Admin() {
                   <label className="block text-sm font-medium text-slate-300 mb-1">
                     360일 스테이킹 일일 이자율 (%)
                   </label>
-                  <p className="text-xs text-slate-500 mb-2">360일 기간으로 스테이킹한 YNV에 대한 매일 자동 적립되는 이자율</p>
+                  <p className="text-xs text-slate-500 mb-2">360일 기간으로 스테이킹한 DSHIB에 대한 매일 자동 적립되는 이자율</p>
                   <div className="flex gap-2 items-center">
                     <Input
                       type="number"
@@ -1258,14 +1258,14 @@ export default function Admin() {
                       placeholder="1.5"
                     />
                     <span className="text-slate-400 text-sm">% / 일</span>
-                    <span className="text-xs text-slate-500">예: 1.5% → 10,000 YNV 스테이킹 시 150 YNV/일</span>
+                    <span className="text-xs text-slate-500">예: 1.5% → 10,000 DSHIB 스테이킹 시 150 DSHIB/일</span>
                   </div>
                 </div>
 
                 {/* 초기 스테이킹 최소 */}
                 <div>
                   <label className="block text-sm font-medium text-slate-300 mb-1">
-                    초기 스테이킹 최소 수량 (YNV)
+                    초기 스테이킹 최소 수량 (DSHIB)
                   </label>
                   <p className="text-xs text-slate-500 mb-2">신규 스테이킹 시 이 수량 미만이면 차단</p>
                   <Input
@@ -1281,7 +1281,7 @@ export default function Admin() {
                 {/* 리워드 리스테이킹 최소 */}
                 <div>
                   <label className="block text-sm font-medium text-slate-300 mb-1">
-                    리워드 리스테이킹 최소 수량 (YNV)
+                    리워드 리스테이킹 최소 수량 (DSHIB)
                   </label>
                   <p className="text-xs text-slate-500 mb-2">리워드 지갑에서 리스테이킹 시 이 수량 미만이면 차단</p>
                   <Input
@@ -1297,7 +1297,7 @@ export default function Admin() {
                 {/* P2P 최소 수량 */}
                 <div>
                   <label className="block text-sm font-medium text-slate-300 mb-1">
-                    P2P 전송 최소 수량 (YNV)
+                    P2P 전송 최소 수량 (DSHIB)
                   </label>
                   <p className="text-xs text-slate-500 mb-2">회원 간 P2P 전송 시 이 수량 미만이면 차단</p>
                   <Input
@@ -1403,7 +1403,7 @@ export default function Admin() {
                   <span className="text-red-400 mt-0.5">❌</span>
                   <div>
                     <p className="text-red-300 font-medium">차단: P2P 수신 자산 재전송/스테이킹 불가</p>
-                    <p className="text-slate-400 text-xs mt-1">P2P로 받은 YNV는 다른 지갑으로 재전송하거나 스테이킹 풀에 넣을 수 없음</p>
+                    <p className="text-slate-400 text-xs mt-1">P2P로 받은 DSHIB는 다른 지갑으로 재전송하거나 스테이킹 풀에 넣을 수 없음</p>
                   </div>
                 </div>
               </div>
@@ -1597,7 +1597,7 @@ function AdminBalanceTransferPanel() {
   // 내부 전송 mutation
   const transfer = trpc.admin.internalTransfer.useMutation({
     onSuccess: (data) => {
-      setResult(`✅ 전송 완료: ${data.amount} YNV → userId=${data.recipientId} (Admin 잔액: ${data.adminNewBalance})`);
+      setResult(`✅ 전송 완료: ${data.amount} DSHIB → userId=${data.recipientId} (Admin 잔액: ${data.adminNewBalance})`);
       refetchBalance();
       setRecipient("");
       setAmount("");
@@ -1620,7 +1620,7 @@ function AdminBalanceTransferPanel() {
       <p style={{ color: "#e2e8f0", fontSize: 14, marginBottom: 12 }}>
         Admin Balance: <span style={{ color: "#4ade80", fontWeight: "bold", fontSize: 18 }}>
           {adminBalance ? Number(adminBalance.balance).toLocaleString(undefined, { minimumFractionDigits: 2 }) : "..."
-        } YNV</span>
+        } DSHIB</span>
       </p>
       <div style={{ display: "flex", gap: 8, flexWrap: "wrap", alignItems: "center" }}>
         <input
@@ -1631,7 +1631,7 @@ function AdminBalanceTransferPanel() {
         />
         <input
           type="number"
-          placeholder="전송 수량 (YNV)"
+          placeholder="전송 수량 (DSHIB)"
           value={amount}
           onChange={(e) => setAmount(e.target.value)}
           style={{ padding: "6px 10px", borderRadius: 4, border: "1px solid #10b981", background: "#0f172a", color: "#fff", width: 160 }}
@@ -1729,14 +1729,14 @@ function CreditAccountPanel() {
               cursor: "pointer",
             }}
           >
-            <option value="1">Level 1 (30,000 YNV)</option>
-            <option value="2">Level 2 (50,000 YNV)</option>
-            <option value="3">Level 3 (90,000 YNV)</option>
-            <option value="4">Level 4 (140,000 YNV)</option>
+            <option value="1">Level 1 (30,000 DSHIB)</option>
+            <option value="2">Level 2 (50,000 DSHIB)</option>
+            <option value="3">Level 3 (90,000 DSHIB)</option>
+            <option value="4">Level 4 (140,000 DSHIB)</option>
           </select>
         </div>
         <div>
-          <label style={{ color: "#94a3b8", fontSize: 12, display: "block", marginBottom: 4 }}>외상 금액 (YNV) — 직접 입력 가능 (레벨 자동 도출)</label>
+          <label style={{ color: "#94a3b8", fontSize: 12, display: "block", marginBottom: 4 }}>외상 금액 (DSHIB) — 직접 입력 가능 (레벨 자동 도출)</label>
           <input
             type="number"
             value={creditAmount}

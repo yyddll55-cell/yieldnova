@@ -37,7 +37,7 @@ export default function Withdrawal() {
     }
   }, [walletAddr]);
 
-  // 현재 YNV 가격 조회
+  // 현재 DSHIB 가격 조회
   const { data: priceData } = trpc.pointPrice.getCurrentPrice.useQuery();
 
   // 출금 내역 조회
@@ -96,7 +96,7 @@ export default function Withdrawal() {
     }
 
     if (parseFloat(pointAmount) > userBalance) {
-      toast.error(`YNV 잔액이 부족합니다 (보유: ${userBalance.toFixed(2)} YNV)`);
+      toast.error(`DSHIB 잔액이 부족합니다 (보유: ${userBalance.toFixed(2)} DSHIB)`);
       return;
     }
 
@@ -105,17 +105,17 @@ export default function Withdrawal() {
       return;
     }
     if (parseFloat(pointAmount) < minLimit) {
-      toast.error(`최소 출금액은 ${minLimit.toLocaleString()} YNV입니다`);
+      toast.error(`최소 출금액은 ${minLimit.toLocaleString()} DSHIB입니다`);
       return;
     }
     if (parseFloat(pointAmount) > maxLimit) {
-      toast.error(`최대 출금액은 ${maxLimit.toLocaleString()} YNV입니다`);
+      toast.error(`최대 출금액은 ${maxLimit.toLocaleString()} DSHIB입니다`);
       return;
     }
 
     setIsLoading(true);
     try {
-      toast.success(`출금 요청이 생성되었습니다 (${pointAmount} YNV → ${withdrawalAddress.substring(0, 10)}...)`);
+      toast.success(`출금 요청이 생성되었습니다 (${pointAmount} DSHIB → ${withdrawalAddress.substring(0, 10)}...)`);
       setPointAmount("");
       await refreshBalances();
     } catch (error) {
@@ -137,7 +137,7 @@ export default function Withdrawal() {
             </Button>
             <div>
               <h1 className="text-3xl font-bold">출금</h1>
-              <p className="text-muted-foreground mt-1">YNV를 USDT로 환전하세요</p>
+              <p className="text-muted-foreground mt-1">DSHIB를 USDT로 환전하세요</p>
             </div>
           </div>
         </div>
@@ -154,11 +154,11 @@ export default function Withdrawal() {
               <div className="bg-blue-500/10 border border-blue-500/30 rounded-lg p-4 mb-6">
                 <div className="flex items-center justify-between">
                   <div>
-                    <p className="text-blue-300 text-sm mb-1">사용 가능한 YNV</p>
+                    <p className="text-blue-300 text-sm mb-1">사용 가능한 DSHIB</p>
                     <p className="font-bold text-2xl text-white">
                       {!isWalletConnected
                         ? "지갑 연결 필요"
-                        : `${userBalance.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 })} YNV`}
+                        : `${userBalance.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 })} DSHIB`}
                     </p>
                   </div>
                   {isWalletConnected && (
@@ -169,9 +169,9 @@ export default function Withdrawal() {
                 </div>
               </div>
 
-              {/* YNV Amount Input */}
+              {/* DSHIB Amount Input */}
               <div className="mb-6">
-                <label className="block text-sm font-medium mb-2">출금할 YNV</label>
+                <label className="block text-sm font-medium mb-2">출금할 DSHIB</label>
                 <div className="flex gap-2">
                   <div className="flex-1 relative">
                     <Input
@@ -183,7 +183,7 @@ export default function Withdrawal() {
                       disabled={!isWalletConnected}
                     />
                     <span className="absolute right-3 top-1/2 -translate-y-1/2 text-muted-foreground text-sm">
-                      YNV
+                      DSHIB
                     </span>
                   </div>
                   <Button
@@ -199,8 +199,8 @@ export default function Withdrawal() {
               {/* Conversion Breakdown */}
               <div className="bg-card/50 border border-border rounded-lg p-4 mb-6 space-y-3">
                 <div className="flex justify-between text-sm">
-                  <span className="text-muted-foreground">YNV 금액</span>
-                  <span className="font-medium">{pointAmount || "0"} YNV</span>
+                  <span className="text-muted-foreground">DSHIB 금액</span>
+                  <span className="font-medium">{pointAmount || "0"} DSHIB</span>
                 </div>
                 <div className="flex justify-between text-sm">
                   <span className="text-muted-foreground">USDT 환전액</span>
@@ -260,7 +260,7 @@ export default function Withdrawal() {
               {isCreditLocked && (
                 <div className="bg-red-500/10 border border-red-500/30 rounded-lg p-4 mb-6">
                   <p className="text-red-300 text-sm font-medium">⚠️ 외상 대여금 상환 완료 후 출금이 가능합니다</p>
-                  <p className="text-red-200 text-xs mt-1">잔여 대여금: {Number(profile?.creditOwed || 0).toLocaleString()} YNV</p>
+                  <p className="text-red-200 text-xs mt-1">잔여 대여금: {Number(profile?.creditOwed || 0).toLocaleString()} DSHIB</p>
                 </div>
               )}
 
@@ -330,8 +330,8 @@ export default function Withdrawal() {
             <Card className="p-6 mt-6">
               <h3 className="font-semibold mb-4">출금 안내</h3>
               <ul className="text-xs text-muted-foreground space-y-2">
-                <li>• 최소 출금액: {minLimit.toLocaleString()} YNV</li>
-                <li>• 최대 출금액: {maxLimit.toLocaleString()} YNV</li>
+                <li>• 최소 출금액: {minLimit.toLocaleString()} DSHIB</li>
+                <li>• 최대 출금액: {maxLimit.toLocaleString()} DSHIB</li>
                 {isWithdrawalPaused && <li className="text-red-400 font-semibold">• ⚠️ 현재 출금 차단 중</li>}
                 <li>• 출금 수수료: 5%</li>
                 <li>• 처리 시간: 1-2시간</li>

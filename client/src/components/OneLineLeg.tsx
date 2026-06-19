@@ -66,7 +66,7 @@ function MemberRow({ member, index, myId }: { member: any; index: number; myId?:
             Lv.{member.level}
           </span>
           <span className="text-xs text-slate-400 hidden sm:block">
-            {Number(member.pointBalance || 0).toLocaleString()} YNV
+            {Number(member.pointBalance || 0).toLocaleString()} DSHIB
           </span>
           {expanded ? (
             <ChevronUp className="w-4 h-4 text-slate-500" />
@@ -84,7 +84,7 @@ function MemberRow({ member, index, myId }: { member: any; index: number; myId?:
             <p className="text-slate-300 font-mono break-all">{member.walletAddress || "—"}</p>
           </div>
           <div>
-            <p className="text-slate-500 mb-0.5">YNV 잔액</p>
+            <p className="text-slate-500 mb-0.5">DSHIB 잔액</p>
             <p className={`font-bold ${colors.text}`}>
               {Number(member.pointBalance || 0).toLocaleString()}
             </p>
@@ -137,7 +137,7 @@ function LevelTab({ level, myId }: { level: number; myId?: number }) {
         <div className="flex items-center gap-3 text-xs text-slate-400">
           <span>총 {members.length}명</span>
           <span>|</span>
-          <span>필요 잔액: {LEVEL_PRICES[level].toLocaleString()} YNV</span>
+          <span>필요 잔액: {LEVEL_PRICES[level].toLocaleString()} DSHIB</span>
         </div>
       </div>
 

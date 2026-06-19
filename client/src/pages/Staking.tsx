@@ -134,7 +134,7 @@ export default function Staking() {
             <TrendingUp className="w-8 h-8 text-cyan-400" />
             스테이킹 엔진
           </h1>
-          <p className="text-slate-400">YNV를 스테이킹하여 매일 이자를 얻으세요</p>
+          <p className="text-slate-400">DSHIB를 스테이킹하여 매일 이자를 얻으세요</p>
         </div>
 
         {/* 잔액 카드 */}
@@ -146,10 +146,10 @@ export default function Staking() {
             </CardHeader>
             <CardContent>
               <div className="text-3xl font-bold text-cyan-400">{stakedBal.toLocaleString()}</div>
-              <p className="text-xs text-slate-500 mt-1">YNV</p>
+              <p className="text-xs text-slate-500 mt-1">DSHIB</p>
               <div className="mt-3 p-2 bg-cyan-900/20 rounded border border-cyan-500/30">
                 <p className="text-xs text-cyan-300">
-                  📊 일일 이자: <span className="font-bold">{estimatedDailyInterest.toLocaleString(undefined, { maximumFractionDigits: 2 })}</span> YNV
+                  📊 일일 이자: <span className="font-bold">{estimatedDailyInterest.toLocaleString(undefined, { maximumFractionDigits: 2 })}</span> DSHIB
                 </p>
               </div>
             </CardContent>
@@ -162,7 +162,7 @@ export default function Staking() {
             </CardHeader>
             <CardContent>
               <div className="text-3xl font-bold text-yellow-400">{rewardBal.toLocaleString()}</div>
-              <p className="text-xs text-slate-500 mt-1">YNV (Reward Interest Wallet)</p>
+              <p className="text-xs text-slate-500 mt-1">DSHIB (Reward Interest Wallet)</p>
               <div className="mt-3 p-2 bg-yellow-900/20 rounded border border-yellow-500/30">
                 <p className="text-xs text-yellow-300">
                   💰 누적된 이자 수익
@@ -178,7 +178,7 @@ export default function Staking() {
             </CardHeader>
             <CardContent>
               <div className="text-3xl font-bold text-orange-400">{p2pReceivedBal.toLocaleString()}</div>
-              <p className="text-xs text-slate-500 mt-1">YNV (레벨 진입 전용)</p>
+              <p className="text-xs text-slate-500 mt-1">DSHIB (레벨 진입 전용)</p>
               <div className="mt-3 p-2 bg-orange-900/20 rounded border border-orange-500/30">
                 <p className="text-xs text-orange-300">
                   🔒 재전송 불가, 레벨만 사용
@@ -208,7 +208,7 @@ export default function Staking() {
               <CardHeader>
                 <CardTitle className="text-lg text-white">초기 스테이킹</CardTitle>
                 <CardDescription className="text-slate-400">
-                  보유한 YNV를 스테이킹하여 매일 이자를 받으세요
+                  보유한 DSHIB를 스테이킹하여 매일 이자를 받으세요
                 </CardDescription>
               </CardHeader>
               <CardContent className="space-y-4">
@@ -245,21 +245,21 @@ export default function Staking() {
                 <div className="p-3 bg-blue-900/20 border border-blue-500/30 rounded-lg flex gap-2">
                   <AlertCircle className="w-5 h-5 text-blue-400 flex-shrink-0 mt-0.5" />
                   <div className="text-sm text-blue-300">
-                    <p className="font-medium">최소 스테이킹: {minInitial.toLocaleString()} YNV</p>
+                    <p className="font-medium">최소 스테이킹: {minInitial.toLocaleString()} DSHIB</p>
                     <p className="text-xs mt-1">이 금액 이상을 스테이킹해야 합니다.</p>
                   </div>
                 </div>
 
                 {/* 입력 필드 */}
                 <div className="space-y-2">
-                  <label className="block text-sm font-medium text-slate-300">스테이킹 금액 (YNV)</label>
+                  <label className="block text-sm font-medium text-slate-300">스테이킹 금액 (DSHIB)</label>
                   <Input
                     type="number"
                     min="0"
                     step="100"
                     value={stakeAmount}
                     onChange={(e) => setStakeAmount(e.target.value)}
-                    placeholder={`최소 ${minInitial.toLocaleString()} YNV 이상`}
+                    placeholder={`최소 ${minInitial.toLocaleString()} DSHIB 이상`}
                     className="bg-slate-700 border-slate-600 text-white"
                   />
                 </div>
@@ -272,7 +272,7 @@ export default function Staking() {
                       {(parseFloat(stakeAmount || "0") * (selectedRate / 100)).toLocaleString(undefined, {
                         maximumFractionDigits: 2,
                       })}{" "}
-                      YNV/일
+                      DSHIB/일
                     </span>
                   </p>
                   <p className="text-xs text-slate-500 mt-1">
@@ -344,7 +344,7 @@ export default function Staking() {
                 <div className="p-3 bg-yellow-900/20 border border-yellow-500/30 rounded-lg">
                   <p className="text-sm text-yellow-300">
                     <span className="font-medium">현재 리워드 잡액:</span>{" "}
-                    <span className="text-yellow-400 font-bold">{rewardBal.toLocaleString()} YNV</span>
+                    <span className="text-yellow-400 font-bold">{rewardBal.toLocaleString()} DSHIB</span>
                   </p>
                 </div>
 
@@ -352,21 +352,21 @@ export default function Staking() {
                 <div className="p-3 bg-blue-900/20 border border-blue-500/30 rounded-lg flex gap-2">
                   <AlertCircle className="w-5 h-5 text-blue-400 flex-shrink-0 mt-0.5" />
                   <div className="text-sm text-blue-300">
-                    <p className="font-medium">최소 리스테이킹: {minRestake.toLocaleString()} YNV</p>
+                    <p className="font-medium">최소 리스테이킹: {minRestake.toLocaleString()} DSHIB</p>
                     <p className="text-xs mt-1">리워드 지갑에서 이 금액 이상을 리스테이킹할 수 있습니다.</p>
                   </div>
                 </div>
 
                 {/* 입력 필드 */}
                 <div className="space-y-2">
-                  <label className="block text-sm font-medium text-slate-300">리스테이킹 금액 (YNV)</label>
+                  <label className="block text-sm font-medium text-slate-300">리스테이킹 금액 (DSHIB)</label>
                   <Input
                     type="number"
                     min="0"
                     step="100"
                     value={restakeAmount}
                     onChange={(e) => setRestakeAmount(e.target.value)}
-                    placeholder={`최소 ${minRestake.toLocaleString()} YNV 이상`}
+                    placeholder={`최소 ${minRestake.toLocaleString()} DSHIB 이상`}
                     className="bg-slate-700 border-slate-600 text-white"
                   />
                 </div>
@@ -379,7 +379,7 @@ export default function Staking() {
                       {(parseFloat(restakeAmount || "0") * (selectedRate / 100)).toLocaleString(undefined, {
                         maximumFractionDigits: 2,
                       })}{" "}
-                      YNV/일
+                      DSHIB/일
                     </span>
                   </p>
                   <p className="text-xs text-slate-500 mt-1">
@@ -415,7 +415,7 @@ export default function Staking() {
                 </CardHeader>
                 <CardContent className="space-y-3">
                   <p className="text-xs text-slate-400">
-                    리워드 지갑의 YNV를 레벨 진입 지갑으로 이동하여 레벨을 활성화할 수 있습니다.
+                    리워드 지갑의 DSHIB를 레벨 진입 지갑으로 이동하여 레벨을 활성화할 수 있습니다.
                   </p>
                   <div className="flex gap-2">
                     <Button
@@ -439,7 +439,7 @@ export default function Staking() {
               <CardHeader>
                 <CardTitle className="text-lg text-white">언스테이킹</CardTitle>
                 <CardDescription className="text-slate-400">
-                  스테이킹된 YNV를 다시 인출합니다
+                  스테이킹된 DSHIB를 다시 인출합니다
                 </CardDescription>
               </CardHeader>
               <CardContent className="space-y-4">
@@ -447,7 +447,7 @@ export default function Staking() {
                 <div className="p-3 bg-cyan-900/20 border border-cyan-500/30 rounded-lg">
                   <p className="text-sm text-cyan-300">
                     <span className="font-medium">현재 스테이킹 잔액:</span>{" "}
-                    <span className="text-cyan-400 font-bold">{stakedBal.toLocaleString()} YNV</span>
+                    <span className="text-cyan-400 font-bold">{stakedBal.toLocaleString()} DSHIB</span>
                   </p>
                 </div>
 
@@ -462,7 +462,7 @@ export default function Staking() {
 
                 {/* 입력 필드 */}
                 <div className="space-y-2">
-                  <label className="block text-sm font-medium text-slate-300">언스테이킹 금액 (YNV)</label>
+                  <label className="block text-sm font-medium text-slate-300">언스테이킹 금액 (DSHIB)</label>
                   <Input
                     type="number"
                     min="0"

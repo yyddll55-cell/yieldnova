@@ -43,7 +43,7 @@ const CustomTooltip = ({ active, payload, label }: any) => {
         <p className="text-lg font-bold text-blue-400">
           ${parseFloat(payload[0].value).toFixed(4)}
         </p>
-        <p className="text-xs text-muted-foreground mt-1">YNV / USDT</p>
+        <p className="text-xs text-muted-foreground mt-1">DSHIB / USDT</p>
       </div>
     );
   }
@@ -69,7 +69,7 @@ export default function PriceChart() {
   // Update price mutation
   const updatePriceMutation = trpc.pointPrice.setPrice.useMutation({
     onSuccess: () => {
-      toast.success("YNV 가격이 업데이트되었습니다");
+      toast.success("DSHIB 가격이 업데이트되었습니다");
       setNewPrice("");
       refetchHistory();
     },
@@ -141,8 +141,8 @@ export default function PriceChart() {
                   <Zap className="w-5 h-5 text-white" />
                 </div>
                 <div>
-                  <h1 className="text-xl font-bold text-white">YNV / USDT</h1>
-                  <p className="text-xs text-muted-foreground">YieldNova Token</p>
+                  <h1 className="text-xl font-bold text-white">DSHIB / USDT</h1>
+                  <p className="text-xs text-muted-foreground">Dogeshiba Token</p>
                 </div>
               </div>
             </div>
@@ -288,12 +288,12 @@ export default function PriceChart() {
           <Card className="p-6 bg-[#0d1117] border-white/5">
             <h3 className="text-base font-semibold text-white mb-4 flex items-center gap-2">
               <DollarSign className="w-4 h-4 text-blue-400" />
-              YNV 가격 안내
+              DSHIB 가격 안내
             </h3>
             <div className="space-y-3">
               {[
-                { label: "입금 환율", value: `1 USDT = ${(1 / currentPriceVal).toFixed(2)} YNV` },
-                { label: "출금 환율", value: `1 YNV = $${currentPriceVal.toFixed(4)} USDT` },
+                { label: "입금 환율", value: `1 USDT = ${(1 / currentPriceVal).toFixed(2)} DSHIB` },
+                { label: "출금 환율", value: `1 DSHIB = $${currentPriceVal.toFixed(4)} USDT` },
                 { label: "출금 수수료", value: "5%" },
                 { label: "가격 업데이트", value: "매일 관리자 설정" },
               ].map((item) => (
@@ -314,7 +314,7 @@ export default function PriceChart() {
               </h3>
               <div className="space-y-4">
                 <div>
-                  <label className="block text-sm text-muted-foreground mb-2">새로운 YNV 가격 (USD)</label>
+                  <label className="block text-sm text-muted-foreground mb-2">새로운 DSHIB 가격 (USD)</label>
                   <div className="flex gap-2">
                     <div className="flex-1 relative">
                       <Input
