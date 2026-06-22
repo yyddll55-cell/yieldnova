@@ -101,8 +101,8 @@ export default function Dashboard() {
 
       <div style={{ border: '1px solid #1e293b', borderRadius: '10px', padding: '20px', backgroundColor: '#0f172a' }}>
         <p style={{ color: '#94a3b8' }}>현재 레벨</p>
-        <h1 style={{ color: '#00bfff', margin: '10px 0' }}>Level 0</h1>
-        <p style={{ color: '#64748b' }}>기부 시작 전</p>
+        <h1 style={{ color: '#00bfff', margin: '10px 0' }}>0</h1>
+        <p style={{ color: '#64748b' }}>미참여</p>
       </div>
 
       

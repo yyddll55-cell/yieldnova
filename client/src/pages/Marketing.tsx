@@ -79,10 +79,10 @@ export default function Marketing() {
   ];
 
   const PACKAGES = [
-    { name: "스타터", price: 20, level: 1, color: "from-blue-600 to-blue-800", badge: "입문" },
-    { name: "실버", price: 33.33, level: 2, color: "from-slate-500 to-slate-700", badge: "인기" },
-    { name: "골드", price: 60, level: 3, color: "from-yellow-600 to-yellow-800", badge: "추천" },
-    { name: "플래티넘", price: 93.33, level: 4, color: "from-purple-600 to-purple-800", badge: "VIP" },
+    { name: "레벨 1", price: 20, level: 1, color: "from-blue-600 to-blue-800", badge: "입문" },
+    { name: "레벨 2", price: 33.33, level: 2, color: "from-slate-500 to-slate-700", badge: "인기" },
+    { name: "레벨 3", price: 60, level: 3, color: "from-yellow-600 to-yellow-800", badge: "추천" },
+    { name: "레벨 4", price: 93.33, level: 4, color: "from-purple-600 to-purple-800", badge: "VIP" },
   ];
 
   // YNV 환산 계산: USDT × 1,500 = YNV
@@ -157,10 +157,14 @@ export default function Marketing() {
             <span className="text-white">DeFi 플랫폼</span>
           </h1>
 
-          <p className="text-xl text-gray-400 mb-10 max-w-2xl mx-auto leading-relaxed">
+          <p className="text-xl text-gray-400 mb-6 max-w-2xl mx-auto leading-relaxed">
             BSC 블록체인 기반 DSHIB 토큰으로 스마트한 수익을 창출하세요.
             바이너리 조직 구조와 USDT 출금 시스템을 갖춘 차세대 DeFi 플랫폼입니다.
           </p>
+
+          <div className="max-w-2xl mx-auto mb-10 p-4 rounded-xl bg-blue-500/5 border border-blue-500/10 text-sm text-gray-500 leading-relaxed">
+            본 플랫폼은 Web3 기반의 자율 분산형 생태계로 운영되며, 디지털 자산의 P2P 거래는 참여자 간 자율적인 의사에 따라 이루어집니다. 플랫폼은 시스템 운영 및 기술적 지원 기능만 제공합니다.
+          </div>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button

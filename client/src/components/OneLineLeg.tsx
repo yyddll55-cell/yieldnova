@@ -17,10 +17,10 @@ const LEVEL_COLORS: Record<number, { bg: string; text: string; border: string; b
 };
 
 const LEVEL_NAMES: Record<number, string> = {
-  1: "레벨 1 (스타터)",
-  2: "레벨 2 (실버)",
-  3: "레벨 3 (골드)",
-  4: "레벨 4 (플래티넘)",
+  1: "레벨 1",
+  2: "레벨 2",
+  3: "레벨 3",
+  4: "레벨 4",
 };
 
 const LEVEL_PRICES: Record<number, number> = {
