@@ -1,5 +1,5 @@
 {
-  "buildCommand": "cd client && npm install && npx vite build --config ../vite.config.vercel.ts",
+  "buildCommand": "cd client && pnpm install && npx vite build --config ../vite.config.vercel.ts",
   "outputDirectory": "client/dist",
   "framework": null,
   "rewrites": [
